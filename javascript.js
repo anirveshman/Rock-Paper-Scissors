@@ -71,6 +71,11 @@ container.addEventListener("click", (event) => {
 
     if(event.target.tagName === 'BUTTON')
     {
+        if (human_score == 5 || computer_score ==5)
+        {
+            game_reset();
+        }
+
         let humanChoice = event.target.id;
 
         let computer_choice = getComputerChoice();
@@ -81,7 +86,6 @@ container.addEventListener("click", (event) => {
 
         if (human_score == 5 || computer_score ==5)
         {
-            game_reset();
             if (human_score == 5) game_result.textContent = "Congratulations! You won the game";
             else game_result.textContent = "Better luck next time, you lost the game";
         }
